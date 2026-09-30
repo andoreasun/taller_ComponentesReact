@@ -1,13 +1,117 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --primary-color: #1da1f2;
+  --hover-color: #0d8bd9; 
+  --bg-color: #f0f2f5;      
+  --text-dark: #1c1e21;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color) !important;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+/* ====== FORZAR COLORES DE W3.CSS ====== */
+/* Navbar principal */
+.w3-theme-d2, .w3-bar.w3-theme-d2 {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+/* Logo o botones resaltados */
+.w3-theme-d4 {
+  background-color: var(--hover-color) !important;
+}
+
+/* Botones de acción (Publicar, Comentar, Like) */
+.w3-button.w3-theme, .w3-button.w3-theme-d1 {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border-radius: 20px !important;
+  transition: background-color 0.2s ease;
+}
+
+.w3-button.w3-theme:hover, .w3-button.w3-theme-d1:hover {
+  background-color: var(--hover-color) !important;
+}
+
+/* Botones secundarios (Editar perfil, etc.) */
+.w3-button.w3-theme-l4 {
+  background-color: #e4e6eb !important;
+  color: var(--text-dark) !important;
+  border-radius: 20px !important;
+  transition: background-color 0.2s ease;
+}
+
+.w3-button.w3-theme-l4:hover {
+  background-color: #d8dadf !important;
+}
+
+/* Tarjetas (Posts, Perfiles, Widgets) */
+.w3-card {
+  border-radius: 12px !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+  border: none !important;
+}
+
+/* Etiquetas de intereses */
+.w3-tag {
+  border-radius: 15px !important;
+  background-color: #e4e6eb !important;
+  color: var(--text-dark) !important;
+}
+
+/* ====== ARREGLO PARA LOS MENÚS DEL NAVBAR ====== */
+.w3-top {
+  z-index: 99999 !important; /* Pone la barra por encima de TODO */
+}
+
+.w3-bar {
+  overflow: visible !important; /* Evita que W3.CSS corte los menús */
+}
+
+.nav-dropdown-container {
+  position: relative;
+  display: inline-block;
+  overflow: visible !important;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 99999 !important;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  width: 320px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+/* Estilos para los elementos internos de los menús */
+.nav-dropdown-header {
+  padding: 10px 15px;
+  background-color: #f0f2f5;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+  font-size: 16px;
+  color: #1c1e21;
+}
+
+.nav-dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #f0f2f5;
+  text-decoration: none;
+  color: #1c1e21;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.nav-dropdown-item:hover {
+  background-color: #f0f2f5;
 }
